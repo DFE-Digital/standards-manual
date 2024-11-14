@@ -1,0 +1,59 @@
+{% extends "layouts/homepage.html" %}
+
+{% set selectedNav = "Contact" %}
+{% set pageName = "Contact us" %}
+{% set seoPageName = "" %}
+{% set pageDescription = "For questions or comments about the Department for Education standards manual, contact the standards team."%}
+{% set mainClasses = "govuk-!-padding-bottom-0" %}
+
+{% block content %}
+
+    <section class="govuk-!-margin-bottom-0">
+        <div class="govuk-width-container">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+                    <h1 class="govuk-heading-xl">
+                        {% if seoPageName %}{{seoPageName}}
+                        {% else %}{{pageName}}
+                        {% endif %}
+                    </h1>
+                    <p class="govuk-body">
+                        {% if seoPageDescription %}{{seoPageDescription}}
+                        {% else %}{{pageDescription}}
+                        {% endif %}
+                    </p>
+
+                    <dl class="govuk-summary-list govuk-summary-list--no-border">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+      Email us
+    </dt>
+                            <dd class="govuk-summary-list__value">
+                                <a href="mailto:ddt.standards@education.gov.uk">ddt.standards@education.gov.uk</a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+      DfE Slack
+    </dt>
+                            <dd class="govuk-summary-list__value">
+                                <a href="https://ukgovernmentdfe.slack.com/archives/C080RMFHN9H" target="_blank">#ddt-standards</a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+      Cross-GOV Slack
+    </dt>
+                            <dd class="govuk-summary-list__value">
+                                <a href="https://ukgovernmentdigital.slack.com/archives/C080NUDQKQD" target="_blank">#dfe-ddt-standards</a>
+                            </dd>
+                        </div>
+
+                    </dl>
+
+                </div>
+            </div>
+        </section>
+    {% endblock %}

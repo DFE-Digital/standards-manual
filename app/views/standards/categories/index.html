@@ -1,0 +1,40 @@
+{% extends "layouts/full.html" %}
+{% set selectedNav = "Categories" %}
+{% set pageName = "Standard categories" %}
+{% set seoPageName = "" %}
+{% set pageDescription = "" %}
+{% set view = "standards" %}
+{% set sidenav = type | lower %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <h1 class="govuk-heading-xl  govuk-!-margin-bottom-3">Standard categories</h1>
+
+            <p>Find and view standards by category.</p>
+
+
+            <div class="dfe-grid-container">
+
+                {% for category in categories %}
+
+                    <div class="dfe-card">
+                        <div class="dfe-card-container">
+                            <h2 class="govuk-heading-m">
+                                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/category/{{category.slug}}">{{category.title}}</a>
+                            </h2>
+                            <p>{{category.description}}</p>
+
+                              <p class="govuk-!-margin-bottom-0">{{category.standardCount}} standard{% if category.standardCount !== 1 %}s{% endif %}</p>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

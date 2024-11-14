@@ -1,0 +1,163 @@
+<h2 class="govuk-heading-l">Approved and tolerated products</h2>
+
+{% if standard.fields.approvedProducts | length == 0 and standard.fields.toleratedProducts | length == 0 %}
+
+    <p>There are no accepted or tolerated products associated with this standard.</p>
+
+{% endif %}
+
+<h3 class="govuk-heading-m">Approved products</h3>
+
+{% if standard.fields.approvedProducts | length !== 0 %}
+
+    <p>These are the accepted products that are associated with this standard.</p>
+
+    {% for product in standard.fields.approvedProducts %}
+
+        <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">
+                    {{ product.fields.product }}
+                </h2>
+            </div>
+            <div class="govuk-summary-card__content">
+
+                <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+      Vendor
+    </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ product.fields.vendor }}
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+      Version
+    </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ product.fields.version }}
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+      Use-case
+    </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ product.fields.useCase }}
+                        </dd>
+                    </div>
+                </dl>
+
+            </div>
+        </div>
+
+    {% endfor %}
+{% else %}
+
+    <p>There are no approved products associated with this standard.</p>
+
+{% endif %}
+
+{% if standard.fields.toleratedProducts | length !== 0 %}
+
+    <h3 class="govuk-heading-m">Tolerated products</h3>
+
+    <p>These are the tolerated products that are associated with this standard.</p>
+
+    {% for product in standard.fields.toleratedProducts %}
+
+        <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">
+                    {{ product.fields.product }}
+                </h2>
+            </div>
+            <div class="govuk-summary-card__content">
+
+                <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+      Vendor
+    </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ product.fields.vendor }}
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+      Version
+    </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ product.fields.version }}
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+      Use-case
+    </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ product.fields.useCase }}
+                        </dd>
+                    </div>
+                </dl>
+
+            </div>
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>There are no tolerated products associated with this standard.</p>
+
+{% endif %}
+
+<h3 class="govuk-heading-m">Exceptions</h3>
+
+{% if standard.fields.exceptions | length !== 0 %}
+
+    <p>These are the exceptions that are associated with this standard.</p>
+
+    {% for product in standard.fields.exceptions %}
+
+        <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">
+                               Exception {{ loop.index}}
+                </h2>
+            </div>
+            <div class="govuk-summary-card__content">
+
+                <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+      Exception
+    </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ product.fields.title }}
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+      Reason for exception
+    </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ product.fields.details }}
+                        </dd>
+                    </div>
+
+                </dl>
+
+            </div>
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>There are no exceptions associated with this standard.</p>
+
+{% endif %}

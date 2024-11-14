@@ -1,0 +1,31 @@
+<div class="dfe-page-header dfe-page-header--with-sub-nav">
+    <div class="govuk-width-container dfe-width-container ">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-3 govuk-!-margin-top-5">{{standard.fields.title}}</h1>
+
+                <table class="govuk-table  govuk-!-margin-bottom-3">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+
+                            <th class="govuk-table__header govuk-!-width-one-quarter" scope="col">Stage</th>
+                            <th class="govuk-table__header govuk-!-width-one-quarter" scope="col">Reference</th>
+                            <th class="govuk-table__header govuk-!-width-one-quarter" scope="col">Version</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+
+                            <td class="govuk-table__cell">
+                                <strong class="govuk-tag govuk-tag--{% if standard.fields.stage.fields.title === 'Rejected' %}red{% elseif standard.fields.stage.fields.title === 'Published' %}green{% else %}yellow{% endif %}">{{standard.fields.stage.fields.title}}</strong>
+                                <td class="govuk-table__cell">DDTS{{standard.fields.number}}</td>
+                                <td class="govuk-table__cell">V{{standard.fields.version}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    {% include selectedNav | lower +'/standard/_nav.html' %}
+                </div>
+            </div>
+        </div>
+    </div>

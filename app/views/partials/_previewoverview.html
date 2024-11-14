@@ -1,0 +1,62 @@
+<h2 class="govuk-heading-l">Summary</h2>
+
+{% markdown %}
+{{ standard.fields.summary}}
+{% endmarkdown %}
+
+<h2 class="govuk-heading-l">Purpose of the standard</h2>
+
+{% markdown %}
+{{ standard.fields.purpose}}
+{% endmarkdown %}
+
+<h2 class="govuk-heading-l">Categories</h2>
+
+<p>These are the categories and sub-categories that this standard belongs to.</p>
+
+<dl class="govuk-summary-list">
+    {% for category in standard.fields.category %}
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <dt class="govuk-summary-list__key">
+                {{category.fields.title}}
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <ul class="govuk-list">
+                    {% for subCategory in standard.fields.subCategory %}
+                        {% if subCategory.fields.category.sys.id == category.sys.id %}
+                            <li>{{subCategory.fields.title}}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </dd>
+        </div>
+    {% endfor %}
+</dl>
+
+<h2 class="govuk-heading-l">Owners and point of contacts</h2>
+
+<p>These are the owners and points of contact for this standard.</p>
+
+<dl class="govuk-summary-list">
+    {% for owner in standard.fields.owners %}
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <dt class="govuk-summary-list__key">
+            Owner
+        </dt>
+            <dd class="govuk-summary-list__value">
+                <a href="mailto:{{owner.fields.emailAddress}}">{{owner.fields.name}}</a>
+            </dd>
+        </div>
+    {% endfor %}
+    {% for contact in standard.fields.technicalContacts %}
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <dt class="govuk-summary-list__key">
+            Contact
+        </dt>
+            <dd class="govuk-summary-list__value">
+                <a href="mailto:{{contact.fields.emailAddress}}">{{contact.fields.name}}</a>
+            </dd>
+        </div>
+    {% endfor %}
+
+</dl>

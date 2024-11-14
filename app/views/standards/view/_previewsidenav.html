@@ -1,0 +1,17 @@
+<a href="/standards" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-9">Back to standards</a>
+
+<nav class="dfe-vertical-nav">
+
+    <ul class="dfe-vertical-nav__section">
+
+        <li class="dfe-vertical-nav__section-item {% if sidenav === 'overview' %}dfe-vertical-nav__section-item--current{% endif %}">
+            <a class="dfe-vertical-nav__link" href="/standard/{{standard.sys.id}}">Overview</a>
+        </li>
+        <li class="dfe-vertical-nav__section-item {% if sidenav === 'meet' %}dfe-vertical-nav__section-item--current{% endif %}">
+            <a class="dfe-vertical-nav__link" href="/standard/meet/{{standard.sys.id}}">How to meet</a>
+        </li>
+        <li class="dfe-vertical-nav__section-item {% if sidenav === 'products' %}dfe-vertical-nav__section-item--current{% endif %}">
+            <a class="dfe-vertical-nav__link" href="/standard/products/{{standard.sys.id}}">Approved and tolerated products</a>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,29 @@
+{% extends "layouts/full.html" %}
+
+{% set selectedNav = "Standards" %}
+{% set pageName = standard.fields.title %}
+{% set seoPageName = "" %}
+{% set pageDescription = ""%}
+{% set view = "preview" %}
+{% set sidenav = 'overview' %}
+
+{% block hero %}
+    {% include 'standards/view/_previewhead.html' %}
+{% endblock %}
+
+{% block head %}
+    <meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+            {% include 'standards/view/_previewsidenav.html' %}
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+
+            {% include 'partials/_previewoverview.html' %}
+        </div>
+    </div>
+
+{% endblock %}
