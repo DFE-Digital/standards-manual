@@ -1,13 +1,13 @@
 <h2 class="govuk-heading-l">Summary</h2>
 
 {% markdown %}
-{{ standard.fields.summary}}
+{{ standard.fields.summary | safe}}
 {% endmarkdown %}
 
 <h2 class="govuk-heading-l">Purpose of the standard</h2>
 
 {% markdown %}
-{{ standard.fields.purpose}}
+{{ standard.fields.purpose | safe}}
 {% endmarkdown %}
 
 <h2 class="govuk-heading-l">Categories</h2>
