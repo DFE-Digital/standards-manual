@@ -2,7 +2,7 @@
 {% set selectedNav = "Guidance" %}
 {% set pageName = "Standard categories" %}
 {% set seoPageName = "" %}
-{% set pageDescription = "Information for ..." %}
+{% set pageDescription = "Standards are grouped into categories to make finding and applying them relevant to the need." %}
 {% set view = "Standard categories" %}
 {% set setSelectedSideNav = "Standard categories" %}
 
@@ -21,13 +21,550 @@
 {% endblock %}
 
 {% block content %}
+    <style>
+        .app-back-to-top__icon {
+            display: inline-block;
+            width: 0.8em;
+            height: 1em;
+            margin-top: -5px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
     <div class="govuk-width-container">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-quarter">
                 {% include "includes/_side-nav.html"%}
             </div>
 
-            <div class="govuk-grid-column-three-quarters"></div>
+            <div class="govuk-grid-column-three-quarters">
+
+                <h2 class="govuk-heading-l">Categories</h2>
+
+                <p class="govuk-body">The following categories are used to group standards. Each category has a description to help you understand the scope of the standards within it.</p>
+
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Category</th>
+                            <th scope="col" class="govuk-table__header">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#architecture">Architecture</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards related to the design and structure of systems, including enterprise architecture, systems integration, and security architecture.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#benefits">Benefits</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards defining the management and realisation of benefits from projects and programmes.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#commercial">Commercial</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards governing procurement, supplier management, and contract negotiations.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#continuity">Continuity</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards for ensuring business continuity, disaster recovery, and resilience planning.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#data-management">Data management</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards governing data management, including data quality, governance, analysis, and security.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#finance">Finance</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards for financial planning, management, reporting, and governance.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#information-and-data-security">Information and Data Security</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards for the security and management of data, its control, retention, and disposal.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#it-operations">IT Operations</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards for the management and operation of IT systems, covering areas such as infrastructure, cloud services, and system monitoring.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#product-and-delivery">Product and Delivery</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards related to product management, agile delivery, and project management frameworks.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#qa-and-development">QA and Development</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards focusing on software development, testing, quality assurance, and continuous integration/continuous delivery (CI/CD) practices.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#risk">Risk</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards for risk management, including identifying, assessing, and mitigating risks in projects and operations.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#security">Security</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards for ensuring the physical and cyber security of organisational assets and infrastructure.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#sustainability">Sustainability</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards promoting sustainable practices, including environmental responsibility and energy efficiency.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">
+                                <a href="#user-centred-design">User Centred Design</a>
+                            </th>
+                            <td class="govuk-table__cell">Standards around user experience, accessibility, user research, and service design.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="architecture">Architecture</h2>
+
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Group</th>
+                            <th scope="col" class="govuk-table__header">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Business architecture</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Data architecture</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Enterprise architecture</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Network architecture</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Security architecture</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Solution architecture</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Technical architecture</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                <h2 id="data-management">Data management</h2>
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Group</th>
+                            <th scope="col" class="govuk-table__header">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Analytics engineering</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Data analysis</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Data engineering</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Data ethicist</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Data governance</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Data science</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Machine learning</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Performance analysis</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                <h2 id="it-operations">IT Operations</h2>
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Group</th>
+                            <th scope="col" class="govuk-table__header">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Application operations</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Business relationship</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Change and release management</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Command and control</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">End user computing</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">IT service management</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Incident management</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Infrastructure operations</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Problem management</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Service desk</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Service transition</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                <h2 id="product-and-delivery">Product and Delivery</h2>
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Group</th>
+                            <th scope="col" class="govuk-table__header">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Business analysis</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Delivery management</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Portfolio management</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Product management</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Programme delivery</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Service ownership</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                <h2 id="qa-and-development">QA and Development</h2>
+
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Group</th>
+                            <th scope="col" class="govuk-table__header">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">DevOps</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Frontend development</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Quality Assurance Testing</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Software development</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Test engineering</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Test management</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                
+                <h2 id="information-and-data-security">Information and Data Security</h2>
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Group</th>
+                            <th scope="col" class="govuk-table__header">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Archiving and record management</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Classification</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Data ethics</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Data handling</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Data inventory</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Data protection</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Data retention and disposal</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Encryption</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Personal data</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Risk management</th>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                <h2 id="benefits">Benefits</h2>
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                <h2 id="risk">Risk</h2>
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                <h2 id="commercial">Commercial</h2>
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                <h2 id="finance">Finance</h2>
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                <h2 id="continuity">Continuity</h2>
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                <h2 id="security">Security</h2>
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+                <h2 id="sustainability">Sustainability</h2>
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+
+<h2 id="user-centred-design">User Centred Design</h2>
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">Group</th>
+                            <th scope="col" class="govuk-table__header">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Accessibility</th>
+                            <td class="govuk-table__cell">
+                Standards for ensuring that digital services are accessible to all users, including those with disabilities.
+            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Content design</th>
+                            <td class="govuk-table__cell">
+                Standards for creating and managing content that is clear, accurate, and easy to understand.
+            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Interaction design</th>
+                            <td class="govuk-table__cell">
+                Standards for designing user interfaces and interactions, including user journeys and prototyping.
+            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Service design</th>
+                            <td class="govuk-table__cell">
+                Standards for designing services that are easy to use, accessible, and meet user needs.
+            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">User research</th>
+                            <td class="govuk-table__cell">
+                Standards to ensure high levels of quality, ethics and safety in user research activities.
+            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="govuk-body">
+                    <a href="#top">
+                        <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                        </svg> Back to top</a>
+                </p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-9">
+
+            </div>
         </div>
     </div>
 
