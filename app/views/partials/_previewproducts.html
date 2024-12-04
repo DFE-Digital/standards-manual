@@ -6,9 +6,13 @@
 
 {% endif %}
 
-<h3 class="govuk-heading-m">Approved products</h3>
+
+
+
 
 {% if standard.fields.approvedProducts | length !== 0 %}
+
+<h3 class="govuk-heading-m">Approved products</h3>
 
     <p>These are the accepted products that are associated with this standard.</p>
 
@@ -54,9 +58,6 @@
         </div>
 
     {% endfor %}
-{% else %}
-
-    <p>There are no approved products associated with this standard.</p>
 
 {% endif %}
 
@@ -109,10 +110,6 @@
 
     {% endfor %}
 
-{% else %}
-
-    <p>There are no tolerated products associated with this standard.</p>
-
 {% endif %}
 
 <h3 class="govuk-heading-m">Exceptions</h3>
@@ -158,6 +155,6 @@
 
 {% else %}
 
-    <p>There are no exceptions associated with this standard.</p>
+    <p>There are no exceptions allowed for this standard.</p>
 
 {% endif %}
