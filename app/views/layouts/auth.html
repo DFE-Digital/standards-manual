@@ -2,7 +2,7 @@
 {% from 'govuk/components/footer/macro.njk' import govukFooter %}
 
 <!DOCTYPE html>
-<html lang="en" class="govuk-template">
+<html lang="en" class="govuk-template--rebranded ">
 
   <head>
     <meta charset="utf-8">
@@ -31,8 +31,7 @@
     {% endif %}
     <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
 
-    {% include 'layouts/_topnav_new.html'%}
-    {% include 'layouts/_services.html'%}
+
 
     {% block header %}
       {% include 'layouts/_header.html'%}
@@ -83,6 +82,8 @@
       import {initAll} from '/assets/js/govuk-frontend.min.min.js'
       initAll()
     </script>
+
+  <script src="/assets/js/header.js"></script>
 
     {% block scripts %}{% endblock %}
   </body>

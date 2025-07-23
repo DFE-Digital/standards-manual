@@ -3,7 +3,7 @@
 {% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
 
 <!DOCTYPE html>
-<html lang="en" class="govuk-template ">
+<html lang="en" class="govuk-template--rebranded ">
 
 
   <head>
@@ -27,8 +27,7 @@
       {% include 'layouts/_cookiebanner.html'%}
       <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
 
-      {% include 'layouts/_topnav.html'%}
-      {% include 'layouts/_services.html'%}
+
 
       {% block header %}
 
@@ -64,6 +63,7 @@
     import {initAll} from '/assets/js/govuk/all.bundle.min.js'
     initAll()
   </script>
+  <script src="/assets/js/header.js"></script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 {% from 'govuk/components/footer/macro.njk' import govukFooter %}
 
 <!DOCTYPE html>
-<html lang="en" class="govuk-template ">
+<html lang="en" class="govuk-template--rebranded ">
 
 <head>
   <meta charset="utf-8">
@@ -23,7 +23,7 @@
   <link rel="manifest" href="/assets/manifest.json">
   <link rel="stylesheet" href="/assets/css/govuk-frontend-5.0.0.min.css">
   <link href="/assets/css/app.css" rel="stylesheet">
-
+  <link href="/assets/css/_header.css" rel="stylesheet">
   <meta name="google-site-verification" content="DBhD3FNcz0obCetUKaasQIETDZmSSS56Zph_zslinA4" />
   {% block head %}{% endblock %}
 </head>
@@ -42,8 +42,7 @@
 
   {% endif %}
 
-      {% include 'layouts/_topnav_new.html'%}
-    {% include 'layouts/_services.html'%}
+
 
   {% block header %}
   {% include 'layouts/_header_new.html'%}
@@ -87,6 +86,7 @@
   <script src="/assets/js/cookies.min.js"></script>
   <script src="/assets/js/dfefrontend.min.js"></script>
 
+  <script src="/assets/js/header.js"></script>
   <script type="text/javascript" src="/assets/js/accessible-autocomplete.min.min.js"></script>
   {% block scripts %}{% endblock %}
 
